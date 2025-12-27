@@ -1,13 +1,13 @@
-import Speech from './Speech';
+import SpeechBubble from '../speechBubble/SpeechBubble';
 
 import './Hero.scss';
 
 const Hero = () => {
   return (
     <div className='hero'>
-      <div className='hero__left'>
+      <div className='hero__section hero__left'>
         <h1 className='hero__left--title'>
-          Hey There, <br /> <span>I&apos;m Robert</span>
+          Hey There, <br /> <span>I&apos;m Robert!</span>
         </h1>
 
         <div className='hero__awards'>
@@ -22,7 +22,9 @@ const Hero = () => {
             <img src='/award2.png' alt='' />
             <img src='/award3.png' alt='' />
           </div>
+        </div>
 
+        <a href='#services' className='hero__scroll'>
           <svg
             width='50px'
             height='50px'
@@ -39,10 +41,10 @@ const Hero = () => {
               strokeWidth='1'
             />
           </svg>
-        </div>
+        </a>
       </div>
 
-      <div className='hero__right'>
+      <div className='hero__section hero__right'>
         <div className='hero__right--follow'>
           <a href='/'>
             <img src='/instagram.png' alt='' />
@@ -53,9 +55,13 @@ const Hero = () => {
           <a href=''>
             <img src='/youtube.png' alt='' />
           </a>
+
+          <div className='hero__text-container'>
+            <div className='hero__text-container--text'>Follow me</div>
+          </div>
         </div>
 
-        <Speech />
+        <SpeechBubble />
 
         <div className='hero__right--certificate'>
           <img src='/certificate.png' alt='' />
@@ -67,46 +73,47 @@ const Hero = () => {
         </div>
 
         <a href='/#contact' className='hero__contact-link'>
-          <svg
-            viewBox='0 0 200 200'
-            width='150'
-            height='150'
-            role='img'
-            aria-hidden='true'
-            focusable='false'
-          >
-            <circle cx='100' cy='100' r='90' fill='pink' />
-            <path
-              id='innerCirclePath'
-              fill='none'
-              d='M 100,100 m -60,0 a 60,60 0 1,1 120,0 a 60,60 0 1,1 -120,0'
-            />
-            <text className='circleText'>
-              <textPath href='#innerCirclePath'>Hire Now •</textPath>
-            </text>
-            <text className='circleText'>
-              <textPath href='#innerCirclePath' startOffset='44%'>
-                Contact Me •
-              </textPath>
-            </text>
-          </svg>
-
-          <div className='arrow'>
+          <div className='hero__contact-link--btn'>
             <svg
-              xmlns='http://www.w3.org/2000/svg'
-              viewBox='0 0 24 24'
-              width='50'
-              height='50'
-              fill='none'
-              stroke='black'
-              strokeWidth='2'
+              viewBox='0 0 200 200'
+              width='150'
+              height='150'
               role='img'
               aria-hidden='true'
               focusable='false'
             >
-              <line x1='6' y1='18' x2='18' y2='6' />
-              <polyline points='9 6 18 6 18 15' />
+              <circle cx='100' cy='100' r='90' fill='pink' />
+              <path
+                id='innerCirclePath'
+                fill='none'
+                d='M 100,100 m -60,0 a 60,60 0 1,1 120,0 a 60,60 0 1,1 -120,0'
+              />
+              <text className='hero__circle-text'>
+                <textPath href='#innerCirclePath'>Hire Now •</textPath>
+              </text>
+              <text className='hero__circle-text'>
+                <textPath href='#innerCirclePath' startOffset='44%'>
+                  Contact Me •
+                </textPath>
+              </text>
             </svg>
+            <div className='hero__arrow'>
+              <svg
+                xmlns='http://www.w3.org/2000/svg'
+                viewBox='0 0 24 24'
+                width='50'
+                height='50'
+                fill='none'
+                stroke='black'
+                strokeWidth='2'
+                role='img'
+                aria-hidden='true'
+                focusable='false'
+              >
+                <line x1='6' y1='18' x2='18' y2='6' />
+                <polyline points='9 6 18 6 18 15' />
+              </svg>
+            </div>
           </div>
         </a>
       </div>
