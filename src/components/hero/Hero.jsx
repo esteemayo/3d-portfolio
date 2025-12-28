@@ -1,30 +1,79 @@
+import { motion } from 'motion/react';
 import SpeechBubble from '../speechBubble/SpeechBubble';
 
 import './Hero.scss';
+
+const awardVariants = {
+  initial: {
+    x: -100,
+    opacity: 0,
+  },
+  animate: {
+    x: 0,
+    opacity: 1,
+    transition: {
+      duration: 1,
+      staggerChildren: 0.2,
+    },
+  },
+};
+
+const followVariants = {
+  initial: {
+    y: -100,
+    opacity: 0,
+  },
+  animate: {
+    y: 0,
+    opacity: 1,
+    transition: {
+      duration: 1,
+      staggerChildren: 0.2,
+    },
+  },
+};
 
 const Hero = () => {
   return (
     <div className='hero'>
       <div className='hero__section hero__left'>
-        <h1 className='hero__left--title'>
-          Hey There, <br /> <span>I&apos;m Robert!</span>
-        </h1>
+        <motion.h1
+          initial={{ y: -100, opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
+          transition={{ duration: 1 }}
+          className='hero__left--title'
+        >
+          Hey There, <br />
+          <span>I&apos;m Robert!</span>
+        </motion.h1>
 
-        <div className='hero__awards'>
-          <h2 className='hero__awards--heading'>Top rated designers</h2>
+        <motion.div
+          variants={awardVariants}
+          initial='initial'
+          animate='animate'
+          className='hero__awards'
+        >
+          <motion.h2 variants={awardVariants} className='hero__awards--heading'>
+            Top rated designers
+          </motion.h2>
 
-          <p className='hero__awards--desc'>
+          <motion.p variants={awardVariants} className='hero__awards--desc'>
             Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-          </p>
+          </motion.p>
 
-          <div className='hero__awards--list'>
-            <img src='/award1.png' alt='' />
-            <img src='/award2.png' alt='' />
-            <img src='/award3.png' alt='' />
-          </div>
-        </div>
+          <motion.div variants={awardVariants} className='hero__awards--list'>
+            <motion.img variants={awardVariants} src='/award1.png' alt='' />
+            <motion.img variants={awardVariants} src='/award2.png' alt='' />
+            <motion.img variants={awardVariants} src='/award3.png' alt='' />
+          </motion.div>
+        </motion.div>
 
-        <a href='#services' className='hero__scroll'>
+        <motion.a
+          animate={{ y: [0, 5], opacity: [0, 1, 0] }}
+          transition={{ repeat: Infinity, duration: 4, ease: 'easeInOut' }}
+          href='#services'
+          className='hero__scroll'
+        >
           <svg
             width='50px'
             height='50px'
@@ -35,31 +84,41 @@ const Hero = () => {
             aria-hidden='true'
             focusable='false'
           >
-            <path
+            <motion.path
+              animate={{ y: [0, 5] }}
+              transition={{ repeat: Infinity, duration: 4, ease: 'easeInOut' }}
               d='M5 9C5 5.13401 8.13401 2 12 2C15.866 2 19 5.13401 19 9V15C19 18.866 15.866 22 12 22C8.13401 22 5 18.866 5 15V9Z'
               stroke='white'
               strokeWidth='1'
             />
           </svg>
-        </a>
+        </motion.a>
       </div>
 
       <div className='hero__section hero__right'>
-        <div className='hero__right--follow'>
-          <a href='/'>
+        <motion.div
+          variants={followVariants}
+          initial='initial'
+          animate='animate'
+          className='hero__right--follow'
+        >
+          <motion.a variants={followVariants} href='/'>
             <img src='/instagram.png' alt='' />
-          </a>
-          <a href=''>
+          </motion.a>
+          <motion.a variants={followVariants} href=''>
             <img src='/facebook.png' alt='' />
-          </a>
-          <a href=''>
+          </motion.a>
+          <motion.a variants={followVariants} href=''>
             <img src='/youtube.png' alt='' />
-          </a>
+          </motion.a>
 
-          <div className='hero__text-container'>
+          <motion.div
+            variants={followVariants}
+            className='hero__text-container'
+          >
             <div className='hero__text-container--text'>Follow me</div>
-          </div>
-        </div>
+          </motion.div>
+        </motion.div>
 
         <SpeechBubble />
 
@@ -116,6 +175,11 @@ const Hero = () => {
             </div>
           </div>
         </a>
+      </div>
+      <div className='hero__bg'>
+        <div className='hero__bg--img'>
+          <img src='/hero.png' alt='image' />
+        </div>
       </div>
     </div>
   );
