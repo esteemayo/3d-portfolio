@@ -1,5 +1,9 @@
+import { Canvas } from '@react-three/fiber';
+import { Suspense } from 'react';
+import SpeechBubble from './speechBubble/SpeechBubble';
 import { motion } from 'motion/react';
-import SpeechBubble from '../speechBubble/SpeechBubble';
+
+import Shape from './Shape';
 
 import './Hero.scss';
 
@@ -122,17 +126,30 @@ const Hero = () => {
 
         <SpeechBubble />
 
-        <div className='hero__right--certificate'>
+        <motion.div
+          animate={{ opacity: [0, 1] }}
+          transition={{ duration: 1 }}
+          className='hero__right--certificate'
+        >
           <img src='/certificate.png' alt='' />
           LMA CERTIFIED
           <br />
           PROFESSIONAL
           <br />
           DESIGNER
-        </div>
+        </motion.div>
 
-        <a href='/#contact' className='hero__contact-link'>
-          <div className='hero__contact-link--btn'>
+        <motion.a
+          animate={{ x: [200, 0], opacity: [0, 1] }}
+          transition={{ duration: 2 }}
+          href='/#contact'
+          className='hero__contact-link'
+        >
+          <motion.div
+            animate={{ rotate: [0, 360] }}
+            transition={{ duration: 10, repeat: Infinity, ease: 'linear' }}
+            className='hero__contact-link--btn'
+          >
             <svg
               viewBox='0 0 200 200'
               width='150'
@@ -156,6 +173,7 @@ const Hero = () => {
                 </textPath>
               </text>
             </svg>
+
             <div className='hero__arrow'>
               <svg
                 xmlns='http://www.w3.org/2000/svg'
@@ -173,10 +191,17 @@ const Hero = () => {
                 <polyline points='9 6 18 6 18 15' />
               </svg>
             </div>
-          </div>
-        </a>
+          </motion.div>
+        </motion.a>
       </div>
+
       <div className='hero__bg'>
+        <Canvas>
+          <Suspense fallback='loading...'>
+            <Shape />
+          </Suspense>
+        </Canvas>
+
         <div className='hero__bg--img'>
           <img src='/hero.png' alt='image' />
         </div>

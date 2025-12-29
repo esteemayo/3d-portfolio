@@ -1,10 +1,11 @@
+import { motion } from 'motion/react'
 import { TypeAnimation } from 'react-type-animation';
 
 import './SpeechBubble.scss';
 
 const SpeechBubble = () => {
   return (
-    <div className='speech-bubble'>
+    <motion.div animate={{ opacity: [0, 1], transition: { duration: 1 } }} className='speech-bubble'>
       <div className='speech-bubble__text'>
         <TypeAnimation
           sequence={[
@@ -22,7 +23,7 @@ const SpeechBubble = () => {
       </div>
 
       <img src='/man.png' alt='avatar' className='speech-bubble__img' />
-    </div>
+    </motion.div>
   );
 };
 
