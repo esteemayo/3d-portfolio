@@ -1,0 +1,16 @@
+.counter {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+
+  &__heading {
+    font-size: 4.8rem;
+    color: #dd4c62;
+  }
+
+  &__text {
+    text-transform: capitalize;
+    font-size: 1.3rem;
+    width: 12rem;
+  }
+}
