@@ -1,2 +1,109 @@
 .portfolio-list-item {
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10rem;
+
+  // &:nth-child(1) {
+  //   background-image: linear-gradient(to right, #12071f, #210b3a);
+  // }
+
+  // &:nth-child(2) {
+  //   background-image: linear-gradient(to right, #210b3a, #27084a);
+  // }
+
+  // &:nth-child(3) {
+  //   background-image: linear-gradient(to right, #27084a, #220345);
+  // }
+
+  // &:nth-child(4) {
+  //   background-image: linear-gradient(to right, #220345, #2a0159);
+  // }
+
+  // &:nth-child(5) {
+  //   background-image: linear-gradient(to right, #2a0159, #12071f);
+  // }
+
+  // &:nth-child(3) {
+  //   background-image: linear-gradient(to right, transparent, #260622);
+  // }
+
+  // &:nth-child(4) {
+  //   background-image: linear-gradient(to right, #260622, #02222e);
+  // }
+
+  // &:nth-child(5) {
+  //   background-image: linear-gradient(to right, #02222e, #12071f);
+  // }
+
+  // &:nth-child(6) {
+  //   background-image: linear-gradient(to right, #12071f, transparent);
+  // }
+
+  @media (max-width: 96em) {
+    gap: 5rem;
+  }
+
+  @media (max-width: 64em) {
+    flex-direction: column;
+  }
+
+  &__image {
+    width: 40%;
+    border-radius: 2rem;
+    overflow: hidden;
+
+    @media (max-width: 64em) {
+      width: 80%;
+    }
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  &__wrapper {
+    width: 40%;
+
+    display: flex;
+    flex-direction: column;
+    gap: 2.4rem;
+
+    @media (max-width: 64em) {
+      width: 80%;
+    }
+
+    &--title {
+      font-size: 5.6rem;
+
+      @media (max-width: 80em) {
+        font-size: 4.8rem;
+      }
+    }
+
+    &--desc {
+      font-weight: 300;
+    }
+
+    &--link {
+      width: max-content;
+
+      button {
+        display: inline-block;
+        border: none;
+        text-transform: capitalize;
+        font-weight: 500;
+        padding: 1.2rem;
+        background-color: pink;
+        border-radius: 1rem;
+        cursor: pointer;
+      }
+    }
+  }
 }

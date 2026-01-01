@@ -1,2 +1,13 @@
 .portfolio {
+  height: 600vh;
+  position: relative;
+
+  &__list {
+    position: sticky;
+    top: 0;
+
+    display: flex;
+    width: max-content;
+    height: 100vh;
+  }
 }
