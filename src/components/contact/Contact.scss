@@ -1,2 +1,84 @@
 .contact {
+  height: 100%;
+  display: flex;
+  gap: 10rem;
+
+  @media (max-width: 64em) {
+    gap: 3rem;
+  }
+
+  @media (max-width: 48em) {
+    flex-direction: column;
+  }
+
+  &__section {
+    width: 50%;
+    height: 100%;
+    padding: 2rem;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    @media (max-width: 48em) {
+      width: 100%;
+    }
+
+    &:first-child {
+      @media (max-width: 48em) {
+        height: 70%;
+      }
+    }
+
+    &:last-child {
+      padding: 5rem;
+      background-color: rgba(2, 2, 45, 0.187);
+      margin: 5rem 0;
+      border-radius: 50% 0;
+
+      @media (max-width: 48em) {
+        height: 30%;
+      }
+    }
+  }
+
+  &__form {
+    width: 80%;
+    padding: 5rem;
+    background-color: rgba(2, 2, 45, 0.066);
+    border-radius: 5rem;
+
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+
+    @media (max-width: 80em) {
+      width: 100%;
+    }
+
+    &--heading {
+      color: inherit;
+    }
+
+    &--btn {
+      display: inline-block;
+      border: none;
+      padding: 2rem;
+      background-color: #dd4c62;
+      color: #fff;
+      border-radius: 1rem;
+      cursor: pointer;
+
+      &:focus-within {
+        outline: 1px solid #dd4c62;
+        outline-offset: 2px;
+      }
+
+      &:disabled {
+        opacity: 0.75;
+        pointer-events: none;
+        user-select: none;
+      }
+    }
+  }
 }

@@ -1,0 +1,32 @@
+.input {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+
+  &__label {
+    width: max-content;
+    display: inline-block;
+    text-transform: initial;
+    text-rendering: optimizeLegibility;
+    font-size: 1.3rem;
+  }
+
+  &__control {
+    display: inline-block;
+    border: none;
+    padding: 1.2rem;
+    color: #333;
+    border-radius: 0.5rem;
+
+    &:focus-within {
+      outline: 1px solid #634a96;
+      outline-offset: 2px;
+    }
+
+    &:disabled {
+      opacity: 0.75;
+      pointer-events: none;
+      user-select: none;
+    }
+  }
+}
