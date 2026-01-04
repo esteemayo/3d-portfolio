@@ -43,7 +43,7 @@ const PortfolioListItem = ({ img, desc, link, title }) => {
   const isInView = useInView(ref, { margin: '-100px' });
 
   return (
-    <div ref={ref} className='portfolio-list-item'>
+    <article ref={ref} className='portfolio-list-item'>
       <motion.div
         variants={imgVariants}
         animate={isInView ? 'animate' : 'initial'}
@@ -77,7 +77,7 @@ const PortfolioListItem = ({ img, desc, link, title }) => {
           <button type='button'>View project</button>
         </motion.a>
       </motion.div>
-    </div>
+    </article>
   );
 };
 

@@ -66,7 +66,7 @@ const Services = () => {
           {services.map((service) => {
             const { id, img, title, counter } = service;
             return (
-              <motion.div
+              <motion.article
                 variants={listVariants}
                 key={id}
                 onClick={() => setCurrentServiceId(id)}
@@ -80,7 +80,7 @@ const Services = () => {
                   <h2>{title}</h2>
                   <h3>{counter}</h3>
                 </div>
-              </motion.div>
+              </motion.article>
             );
           })}
         </motion.div>
