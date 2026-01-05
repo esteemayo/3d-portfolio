@@ -1,0 +1,11 @@
+.alert {
+  font-size: 1.6rem;
+
+  &-success {
+    color: #4d9c5f;
+  }
+
+  &-danger {
+    color: #f8a4ac;
+  }
+}

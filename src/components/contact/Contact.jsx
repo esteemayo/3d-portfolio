@@ -3,8 +3,9 @@ import emailjs from '@emailjs/browser';
 import { motion, useInView } from 'motion/react';
 
 import ContactSvg from './ContactSvg';
-import Input from './../input/Input';
+import Alert from './alert/Alert';
 import Textarea from './../textarea/Textarea';
+import Input from './../input/Input';
 
 import './Contact.scss';
 
@@ -73,7 +74,7 @@ const Contact = () => {
 
           <Input
             variants={listVariant}
-            name='user_username'
+            name='name'
             label='Name'
             placeholder='John Doe'
           />
@@ -81,14 +82,14 @@ const Contact = () => {
           <Input
             variants={listVariant}
             type='email'
-            name='user_email'
+            name='email'
             label='Email'
             placeholder='john@gmail.com'
           />
 
           <Textarea
             variants={listVariant}
-            name='user_message'
+            name='message'
             label='Message'
             rows={10}
             placeholder='Write your message...'
@@ -102,8 +103,21 @@ const Contact = () => {
             Send
           </motion.button>
 
-          {success && <span>Your message has been sent!</span>}
-          {error && <span>Something went wrong!</span>}
+          {success && (
+            <Alert
+              type='success'
+              message='Your message has been sent!'
+              hideAlert={() => setSuccess(false)}
+            />
+          )}
+
+          {error && (
+            <Alert
+              type='danger'
+              message='Something went wrong!'
+              hideAlert={() => setError(false)}
+            />
+          )}
         </motion.form>
       </div>
 
