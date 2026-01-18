@@ -49,6 +49,7 @@ const Contact = () => {
         () => {
           setError(false);
           setSuccess(true);
+          form.current.reset();
         },
         (error) => {
           console.log(error);
